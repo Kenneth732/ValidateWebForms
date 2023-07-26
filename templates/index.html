@@ -56,6 +56,22 @@
             </ul>
         {% endif %}
 
+        <p>
+            {{ form.level.label }}
+            {{ form.level() }}
+        </p>
+
+        {% if form.level.errors %}
+            <ul class="errors">
+                {% for error in form.level.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <input type="submit" value="Add">
+        </p>
     </form>
 
 {% endblock %}
