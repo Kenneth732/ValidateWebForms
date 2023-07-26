@@ -18,3 +18,11 @@ courses_list = [{
 def index():
     form = CourseForm()
     return render_template('index.html', form=form)
+
+@app.route('/about/')
+def about():
+    return render_template('about.html')
+
+@app.route('/courses/')
+def courses():
+    return render_template('courses.html', courses_list=courses_list)
