@@ -18,6 +18,19 @@
             </ul>
         {% endif %}
 
+        <p>
+            {{ form.description.label }}
+        </p>
+        {{ form.description(rows=10, cols=50) }}
+
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
 
     </form>
 
