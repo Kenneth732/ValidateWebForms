@@ -17,6 +17,14 @@ courses_list = [{
 @app.route('/', methods=('GET', 'POST'))
 def index():
     form = CourseForm()
+    if form.validate_on_submit():
+        courses_list.append({
+            'title': form.title.date,
+            'description': form.description.date,
+            'available': form.available.date,
+            'level': form.level.date
+        })
+        return redirect(url_for('courses'))
     return render_template('index.html', form=form)
 
 @app.route('/about/')
